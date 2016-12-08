@@ -1,0 +1,162 @@
+<!-- CSS goes in the document HEAD or added to your external stylesheet -->
+<style type="text/css">
+    table.imagetable {
+        font-family: verdana,arial,sans-serif;
+        font-size:11px;
+        color:#333333;
+        border-width: 1px;
+        border-color: #999999;
+        border-collapse: collapse;
+    }
+    table.imagetable th {
+        background:#b5cfd2 url('./img/cell-blue.jpg');
+        border-width: 1px;
+        padding: 4px;
+        border-style: solid;
+        border-color: #999999;
+    }
+    table.imagetable td {
+        background:#dcddc0 url('./img/cell-grey.jpg');
+        border-width: 1px;
+        padding: 4px;
+        border-style: solid;
+        border-color: #999999;
+    }
+</style>
+
+<!-- Table goes in the document BODY -->
+<table class="imagetable" align="center" width="70%" name="table1">
+    <tr>
+        <th colspan="3"><h2>天然橡胶期现套保计算器</h2></th>
+    </tr>
+    <!--价格-->
+    <tr>
+        <td rowspan="6"><h2 align="center">价格</h2></td>
+        <td align="center">现货成交单价（元/吨）<td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">期货多单建仓单价（元/吨）</td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">期货多单平仓单价（元/吨）</td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">期货多单交割单价（元/吨）</td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">期货空单建仓单价（元/吨）</td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">期货空单实时单价（元/吨）</td><td align="center"><input type="text"></td>
+    </tr>
+    <!--时间-->
+    <tr>
+        <td rowspan="3"><h2 align="center">时间</h2></td>
+        <td align="center">当前时间</td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">期货建仓时间</td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">现货交割时间</td><td align="center"><input type="text"></td>
+    </tr>
+</table>
+
+<!--表单2-->
+<table class="imagetable" align="center" width="70%" name="table2">
+    <tr>
+       <!-- <th colspan="5"><h2>结果清单</h2></th>-->
+        <th align="center">序号</th><th align="center" colspan="2">交割方式</th><th align="center">场内</th><th align="center">场外</th>
+
+    </tr>
+    <!--价格-->
+    <tr>
+        <td align="center">1</td><td align="center" colspan="2">数量（吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">2</td><td align="center" rowspan="2">交割成本</td><td align="center">单价（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">3</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">4</td><td align="center" rowspan="2">出入库费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">5</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">6</td><td align="center" rowspan="2">仓储费用</td><td align="center">收费标准（元/天/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <!--时间-->
+    <tr>
+       <!-- <td rowspan="3"><h2 align="center">时间</h2></td>-->
+        <td align="center">7</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">8</td><td align="center" rowspan="2">交割费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">9</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">10</td><td align="center" rowspan="2">过户费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">11</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">12</td><td align="center" rowspan="2">多头平仓交易费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">13</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">14</td><td align="center" rowspan="2">财务费用</td><td align="center">收费标准（年）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">15</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">16</td><td align="center" rowspan="2">相关税费费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">17</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">18</td><td align="center" rowspan="2">打单费用</td><td align="center">收费标准（元/份）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">19</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">20</td><td align="center" rowspan="3">空单保证金</td><td align="center">保证金比例</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">21</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">22</td><td align="center">保证金利息（元)</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">23</td><td align="center" colspan="2">合计（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">24</td><td align="center" rowspan="5">收益部分</td><td align="center">多单平仓盈亏（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">25</td><td align="center">现货交易盈亏（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">26</td><td align="center">空单盈亏（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">27</td><td align="center">收益合计</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center">28</td><td align="center">年化收益率</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+    </tr>
+    <tr>
+        <td align="center" colspan="5" height="50px"></td>
+    </tr>
+</table>
