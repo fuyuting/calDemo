@@ -24,6 +24,9 @@
     }
 </style>
 
+
+
+
 <!-- Table goes in the document BODY -->
 <table class="imagetable" align="center" width="70%" name="table1">
     <tr>
@@ -32,34 +35,35 @@
     <!--价格-->
     <tr>
         <td rowspan="6"><h2 align="center">价格</h2></td>
-        <td align="center">现货成交单价（元/吨）<td align="center"><input type="text"></td>
+        <td align="center">现货成交单价（元/吨）<td align="center"><input type="text" id="xhcjdj"></td>
     </tr>
     <tr>
-        <td align="center">期货多单建仓单价（元/吨）</td><td align="center"><input type="text"></td>
+        <td align="center">期货多单建仓单价（元/吨）</td><td align="center"><input type="text" id="qiddjcdj"></td>
     </tr>
     <tr>
-        <td align="center">期货多单平仓单价（元/吨）</td><td align="center"><input type="text"></td>
+        <td align="center">期货多单平仓单价（元/吨）</td><td align="center"><input type="text" id="qhddpcdj"></td>
     </tr>
     <tr>
-        <td align="center">期货多单交割单价（元/吨）</td><td align="center"><input type="text"></td>
+        <td align="center">期货多单交割单价（元/吨）</td><td align="center"><input type="text" id="qhddjgdj"></td>
     </tr>
     <tr>
-        <td align="center">期货空单建仓单价（元/吨）</td><td align="center"><input type="text"></td>
+        <td align="center">期货空单建仓单价（元/吨）</td><td align="center"><input type="text" id="qhkdjcdj"></td>
     </tr>
     <tr>
-        <td align="center">期货空单实时单价（元/吨）</td><td align="center"><input type="text"></td>
+        <td align="center">期货空单实时单价（元/吨）</td><td align="center"><input type="text" id="qhkdssdj"></td>
     </tr>
     <!--时间-->
     <tr>
         <td rowspan="3"><h2 align="center">时间</h2></td>
-        <td align="center">当前时间</td><td align="center"><input type="text"></td>
+        <td align="center" id="dqsj">当前时间</td><td align="center"><input type="text"></td>
     </tr>
     <tr>
-        <td align="center">期货建仓时间</td><td align="center"><input type="text"></td>
+        <td align="center" id="qhjcsj">期货建仓时间</td><td align="center"><input type="text"></td>
     </tr>
     <tr>
-        <td align="center">现货交割时间</td><td align="center"><input type="text"></td>
+        <td align="center" xhjgsj>现货交割时间</td><td align="center"><input type="text"></td>
     </tr>
+    <td><input type="button" value="计算" id="aniu1" onclick="jia();"/></td>
 </table>
 
 <!--表单2-->
@@ -71,92 +75,133 @@
     </tr>
     <!--价格-->
     <tr>
-        <td align="center">1</td><td align="center" colspan="2">数量（吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">1</td><td align="center" colspan="2">数量（吨）</td><td align="center"><input type="text" id="cnsl"></td><td align="center"><input type="text" id="cwsl"></td>
     </tr>
     <tr>
-        <td align="center">2</td><td align="center" rowspan="2">交割成本</td><td align="center">单价（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">2</td><td align="center" rowspan="2">交割成本</td><td align="center">单价（元/吨）</td><td align="center"><input type="text" id="cnjgcbdj"></td><td align="center"><input type="text" id="cwjgcbdj"></td>
     </tr>
     <tr>
-        <td align="center">3</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">3</td><td align="center">金额（元）</td><td align="center"><input type="text" id="cnjgcbje"></td><td align="center"><input type="text" id="cwjgcbje"></td>
     </tr>
     <tr>
-        <td align="center">4</td><td align="center" rowspan="2">出入库费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">4</td><td align="center" rowspan="2">出入库费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center" id="cncrkfybz"><input type="text" id="cwcrkfybz"></td>
     </tr>
     <tr>
-        <td align="center">5</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">5</td><td align="center">金额（元）</td><td align="center"><input type="text" id="cncrkfyje"></td><td align="center"><input type="text" id="cwcrkfyje"></td>
     </tr>
     <tr>
-        <td align="center">6</td><td align="center" rowspan="2">仓储费用</td><td align="center">收费标准（元/天/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">6</td><td align="center" rowspan="2">仓储费用</td><td align="center">收费标准（元/天/吨）</td><td align="center"><input type="text" id="cnccfybz"></td><td align="center"><input type="text" id="cwccfybz"></td>
     </tr>
     <!--时间-->
     <tr>
        <!-- <td rowspan="3"><h2 align="center">时间</h2></td>-->
-        <td align="center">7</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">7</td><td align="center">金额（元）</td><td align="center"><input type="text" id="cnccfyje"></td><td align="center"><input type="text" id="cwccfyje"></td>
     </tr>
     <tr>
-        <td align="center">8</td><td align="center" rowspan="2">交割费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">8</td><td align="center" rowspan="2">交割费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text" id="cnjgfybz"></td><td align="center"><input type="text" id="cwjgfybz"></td>
     </tr>
     <tr>
-        <td align="center">9</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">9</td><td align="center">金额（元）</td><td align="center"><input type="text" id="cnjgfyje"></td><td align="center"><input type="text" id="cwjgfyje"></td>
     </tr>
     <tr>
-        <td align="center">10</td><td align="center" rowspan="2">过户费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">10</td><td align="center" rowspan="2">过户费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center" id="cnghfybz"><input type="text" id="cwghfybz"></td>
     </tr>
     <tr>
-        <td align="center">11</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">11</td><td align="center">金额（元）</td><td align="center"><input type="text" id="cnghfyje"></td><td align="center"><input type="text" id="cwghfyje"></td>
     </tr>
     <tr>
-        <td align="center">12</td><td align="center" rowspan="2">多头平仓交易费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">12</td><td align="center" rowspan="2">多头平仓交易费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text" id="cndtpcjyfybz"></td><td align="center"><input type="text" id="cwdtpcjyfybz"></td>
     </tr>
     <tr>
-        <td align="center">13</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">13</td><td align="center">金额（元）</td><td align="center"><input type="text" id="cndtpcjyfyje"></td><td align="center"><input type="text" id="cwdtpcjyfyje"></td>
     </tr>
     <tr>
-        <td align="center">14</td><td align="center" rowspan="2">财务费用</td><td align="center">收费标准（年）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">14</td><td align="center" rowspan="2">财务费用</td><td align="center">收费标准（年）</td><td align="center"><input type="text" id="cncwfybz"></td><td align="center"><input type="text" id="cwcwfybz"></td>
     </tr>
     <tr>
-        <td align="center">15</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">15</td><td align="center">金额（元）</td><td align="center"><input type="text" id="cncwfyje"></td><td align="center"><input type="text" id="cwcwfyje"></td>
     </tr>
     <tr>
-        <td align="center">16</td><td align="center" rowspan="2">相关税费费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">16</td><td align="center" rowspan="2">相关税费费用</td><td align="center">收费标准（元/吨）</td><td align="center"><input type="text" id="cnxgsffybz"></td><td align="center"><input type="text" id="cwxgsffybz"></td>
     </tr>
     <tr>
-        <td align="center">17</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">17</td><td align="center">金额（元）</td><td align="center"><input type="text" id="cnxgsffyje"></td><td align="center"><input type="text" id="cwxgsffyje"></td>
     </tr>
     <tr>
-        <td align="center">18</td><td align="center" rowspan="2">打单费用</td><td align="center">收费标准（元/份）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">18</td><td align="center" rowspan="2">打单费用</td><td align="center">收费标准（元/份）</td><td align="center"><input type="text"></td><td align="center" id="cnddfybz"><input type="text" id="cwddfybz"></td>
     </tr>
     <tr>
-        <td align="center">19</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">19</td><td align="center">金额（元）</td><td align="center"><input type="text" id="cnddfyje"></td><td align="center"><input type="text" id="cwddfyje"></td>
     </tr>
     <tr>
-        <td align="center">20</td><td align="center" rowspan="3">空单保证金</td><td align="center">保证金比例</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">20</td><td align="center" rowspan="3">空单保证金</td><td align="center">保证金比例</td><td align="center"><input type="text"></td><td align="center" id="cnkdbzjbl"><input type="text" id="cwkdbzjbl"></td>
     </tr>
     <tr>
-        <td align="center">21</td><td align="center">金额（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">21</td><td align="center">金额（元）</td><td align="center"><input type="text" id="cnkdbzjje"></td><td align="center"><input type="text" id="cwkdbzjje"></td>
     </tr>
     <tr>
-        <td align="center">22</td><td align="center">保证金利息（元)</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">22</td><td align="center">保证金利息（元)</td><td align="center"><input type="text" id="cnkdbzjlx"></td><td align="center"><input type="text" id="cwkdbzjlx"></td>
     </tr>
     <tr>
-        <td align="center">23</td><td align="center" colspan="2">合计（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">23</td><td align="center" colspan="2">合计（元）</td><td align="center"><input type="text" id="cnhj"></td><td align="center"><input type="text" id="cwhj"></td>
     </tr>
     <tr>
-        <td align="center">24</td><td align="center" rowspan="5">收益部分</td><td align="center">多单平仓盈亏（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">24</td><td align="center" rowspan="5">收益部分</td><td align="center">多单平仓盈亏（元）</td><td align="center"><input type="text" id="cnsybfddpcyk"></td><td align="center"><input type="text" id="cwsybfddpcyk"></td>
     </tr>
     <tr>
-        <td align="center">25</td><td align="center">现货交易盈亏（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">25</td><td align="center">现货交易盈亏（元）</td><td align="center"><input type="text"></td><td align="center" id="cnsybfxhjyyk"><input type="text" id="cwsybfxhjyyk"></td>
     </tr>
     <tr>
-        <td align="center">26</td><td align="center">空单盈亏（元）</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">26</td><td align="center">空单盈亏（元）</td><td align="center"><input type="text" id="cnsybfkdyk"></td><td align="center"><input type="text" id="cwsybfkdyk"></td>
     </tr>
     <tr>
-        <td align="center">27</td><td align="center">收益合计</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">27</td><td align="center">收益合计</td><td align="center"><input type="text" id="cnsybfsyhj"></td><td align="center"><input type="text" id="cwsybfsyhj"></td>
     </tr>
     <tr>
-        <td align="center">28</td><td align="center">年化收益率</td><td align="center"><input type="text"></td><td align="center"><input type="text"></td>
+        <td align="center">28</td><td align="center">年化收益率</td><td align="center"><input type="text" id="cnsybfnhsyl"></td><td align="center"><input type="text" id="cwsybfnhsyl"></td>
     </tr>
     <tr>
         <td align="center" colspan="5" height="50px"></td>
+
     </tr>
 </table>
+
+
+<script type="text/javascript">
+    function jia(){
+        var n1=document.getElementById("xhcjdj");
+        var n2=document.getElementById("qiddjcdj");
+        var nv1=n1.value;
+        var nv2=n2.value;
+        var rv=parseInt(nv1)+parseInt(nv2);
+        var result =document.getElementById("qhddpcdj");
+        result.value=rv;
+    }
+    function jian(){
+        var n1=document.getElementById("num1");
+        var n2=document.getElementById("num2");
+        var nv1=n1.value;
+        var nv2=n2.value;
+        var rv=parseInt(nv1)-parseInt(nv2);
+        var result =document.getElementById("result");
+        result.value=rv;
+    }
+    function cheng(){
+        var n1=document.getElementById("num1");
+        var n2=document.getElementById("num2");
+        var nv1=n1.value;
+        var nv2=n2.value;
+        var rv=parseInt(nv1)*parseInt(nv2);
+        var result =document.getElementById("result");
+        result.value=rv;
+    }
+    function chu(){
+        var n1=document.getElementById("num1");
+        var n2=document.getElementById("num2");
+        var nv1=n1.value;
+        var nv2=n2.value;
+        var rv=parseInt(nv1)/parseInt(nv2);
+        var result =document.getElementById("result");
+        result.value=rv;
+    }
+</script>
